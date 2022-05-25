@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="lib/p5.js"></script>
+    <script src="lib/p5.sound.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    
+    <script src="extras/moon.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    
+    
+    
+    <h1>This is my header!</h1>
+    <button onclick="changeSize(50)">+ Size</button>
+    <button onclick="changeSize(-50)">- Size</button>
+    
+    <div class="resizable">
+      <div id="sketchContainer">
+      </div>
+    </div>
+	
+	<p class="copyright"></p>
+    
+    
+    
+    
+    <script>
+      function changeSize(amt) {
+        // Check this out!
+        var el = document.querySelector('.resizable');
+        
+        // The slice() gets rid of "px" and parseFloat makes it into a number again
+        var w  = parseFloat(window.getComputedStyle(el).width.slice(0,-2));
+        var h  = parseFloat(window.getComputedStyle(el).height.slice(0,-2));
+        
+        el.style.width  = (w+amt) + 'px';
+        el.style.height = (h+amt) + 'px';
+      }
+	  document.body.innerHTML = document.body.innerHTML + 'Ⓒ Griffin Bengraff ' + new Date().getFullYear()
+    </script>
+    
+  
+
+</body></html>
